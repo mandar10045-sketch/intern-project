@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 app.use(express.json({ limit: '10mb' }));
 
 // SQLite database
-const db = new sqlite3.Database('/tmp/database.db', (err) => {
+const db = new sqlite3.Database('./database.db', (err) => {
   if (err) {
     console.error('Error opening database:', err.message);
   } else {
@@ -159,6 +159,7 @@ app.delete('/api/properties/:id', (req, res) => {
   });
 });
 
+console.log(`Starting server on port ${port}`);
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
