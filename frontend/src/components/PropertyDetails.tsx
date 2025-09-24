@@ -26,7 +26,7 @@ const PropertyDetails: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const api = axios.create({ baseURL: 'http://localhost:3000' });
+  const api = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3000' });
 
   useEffect(() => {
     const fetchProperty = async () => {
@@ -113,7 +113,7 @@ const PropertyDetails: React.FC = () => {
                         src={img}
                         alt={`${property.name} ${index + 1}`}
                         className="w-full h-48 object-cover rounded-lg"
-                        onError={(e) => console.error(`Error loading image ${index + 1}`)}
+                        onError={(_e) => console.error(`Error loading image ${index + 1}`)}
                       />
                     ))}
                   </div>

@@ -58,11 +58,11 @@ const PropertyList: React.FC<PropertyListProps> = ({ properties, loading = false
           <Card key={property.id} className="shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-blue-500 bg-white dark:bg-gray-800 bounce-in" style={{ animationDelay: `${index * 0.1}s` }}>
             {property.images && property.images.length > 0 && (
               <div>
-                <img src={property.images[0]} alt={property.name} className="h-48 w-full object-cover rounded-t-lg" onError={(e) => console.error(`Error loading main image for property ${property.id}`)} />
+                <img src={property.images[0]} alt={property.name} className="h-48 w-full object-cover rounded-t-lg" onError={(_e) => console.error(`Error loading main image for property ${property.id}`)} />
                 {property.images.length > 1 && (
                   <div className="grid grid-cols-3 gap-2 p-2">
                     {property.images.slice(1).map((img, index) => (
-                      <img key={index} src={img} alt={`${property.name} ${index + 2}`} className="h-20 w-full object-cover rounded" onError={(e) => console.error(`Error loading additional image ${index + 1} for property ${property.id}`)} />
+                      <img key={index} src={img} alt={`${property.name} ${index + 2}`} className="h-20 w-full object-cover rounded" onError={(_e) => console.error(`Error loading additional image ${index + 1} for property ${property.id}`)} />
                     ))}
                   </div>
                 )}

@@ -23,7 +23,7 @@ const PropertiesPage: React.FC = () => {
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const api = axios.create({ baseURL: 'http://localhost:3000' });
+  const api = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3000' });
 
   const fetchProperties = async () => {
     try {
