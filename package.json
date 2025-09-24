@@ -1,11 +1,11 @@
 {
-  "name": "backend",
+  "name": "intern-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "properties-app/backend/server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
+    "start": "node properties-app/backend/server.js",
+    "dev": "node properties-app/backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
